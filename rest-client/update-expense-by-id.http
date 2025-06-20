@@ -1,0 +1,9 @@
+PUT http://localhost:3000/api/expenses/9d369978-d7bb-44c6-8a3f-3d0eddd714a4
+API_KEY: api_key_dinherin_cc22516276894f7698332e2601efdb0c
+
+{
+  "title": "GTA 6",
+  "amount": 499.90,
+  "date": "2026-05-26",
+  "category_id": "food"
+}

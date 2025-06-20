@@ -1,0 +1,95 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id       String  @id @default(uuid())
+  name     String
+  email    String  @unique
+  password String?
+
+  stripe_some_subscription_active       Boolean? @default(false)
+  stripe_testing_subscription_finished  Boolean? @default(false)
+  stripe_testing_subscription           Boolean? @default(false)
+  stripe_customer_id                    String?  @unique
+  stripe_hosted_invoice_url             String?
+  stripe_invoice_pdf                    String?
+  stripe_testing_start_at               String?
+  stripe_testing_end_at                 String?
+  stripe_subscription_start_at          String?
+  stripe_subscription_end_at            String?
+  stripe_checkout_session_id            String?
+  stripe_billing_portal_url             String?
+  stripe_canceled_subscription          Boolean? @default(false)
+  stripe_subscription_canceled_feedback String?
+  stripe_subscription_canceled_reason   String?
+  stripe_subscription_canceled_comment  String?
+  stripe_subscription_cancel_at         String?
+  stripe_subscription_canceled_at       String?
+
+  reset_password_token            String?
+  reset_password_token_expires_at DateTime?
+
+  api_key String @unique @default(uuid())
+
+  expenses      Expense[]
+  subscriptions Subscription[]
+  webhook_logs  WebhookLogs[]
+
+  created_at DateTime  @default(now())
+  updated_at DateTime? @updatedAt
+  deleted_at DateTime?
+
+  @@map("users")
+}
+
+model Expense {
+  id String @id @default(uuid())
+
+  title       String
+  amount      Int
+  date        DateTime
+  category_id String
+
+  user_email String
+  user       User   @relation(fields: [user_email], references: [email], onDelete: Cascade)
+
+  created_at DateTime  @default(now())
+  updated_at DateTime? @updatedAt
+
+  @@map("expenses")
+}
+
+model Subscription {
+  id String @id @default(uuid())
+
+  customer_id    String
+  customer_name  String
+  customer_email String
+
+  complete_log String
+
+  user User @relation(fields: [customer_email], references: [email], onDelete: Cascade)
+
+  created_at DateTime @default(now())
+
+  @@map("subscriptions")
+}
+
+model WebhookLogs {
+  id String @id @default(uuid())
+
+  json String
+
+  user_id String?
+  user    User?   @relation(fields: [user_id], references: [id], onDelete: SetNull)
+
+  created_at DateTime @default(now())
+
+  @@map("webhook_logs")
+}
