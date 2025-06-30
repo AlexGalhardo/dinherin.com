@@ -29,7 +29,7 @@ export default function AppHeader({ onAddExpense }: AppHeaderProps) {
 	return (
 		<header className="sticky top-0 z-10 bg-white dark:bg-black shadow-sm">
 			<div className="container mx-auto px-4 py-4 flex justify-between items-center">
-				<Link href="/app">
+				<Link href="/dashboard">
 					{isMobile ? (
 						<DollarSign className="h-6 w-6 text-green-600" />
 					) : (

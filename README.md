@@ -30,7 +30,7 @@
 - Use Ngrok to test webhooks requests locally: <https://ngrok.com/>
   - `ngrok http 3000`
   - Save the webhook URL in Stripe Webhook Developers Dashboard: `<your_ngrok_dns>/api/webhook/stripe/checkout`
-- To test /app route without an active stripe subscription, set `NEXT_PUBLIC_TEST_MODE=true`
+- To test /dashboard route without an active stripe subscription, set `NEXT_PUBLIC_TEST_MODE=true`
 
 ## Local Development Setup
 

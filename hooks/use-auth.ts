@@ -64,7 +64,7 @@ export function useAuth() {
 		try {
 			await signIn("google", {
 				redirect: true,
-				callbackUrl: "/app",
+				callbackUrl: "/dashboard",
 			});
 		} catch (error) {
 			throw new Error("Google login failed");

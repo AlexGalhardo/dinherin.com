@@ -5,7 +5,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { useIsMobile } from "@/hooks/use-mobile";
 import { toast } from "@/hooks/use-toast";
 import { CATEGORIES, COLOR_MAP } from "@/lib/constants";
-import { exportToCSV, exportToExcel } from "@/lib/export-utils";
+import { exportToCSV, exportToExcel } from "@/lib/utils/export-files";
 import { formatter } from "@/lib/utils/currency.util";
 import { formatMonthFull } from "@/lib/utils/date.util";
 import { renderIcon } from "@/lib/utils/icons.util";

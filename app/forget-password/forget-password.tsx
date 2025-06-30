@@ -32,7 +32,7 @@ export default function ForgetPasswordClient() {
 
 	useEffect(() => {
 		if (!isLoading && isAuthenticated) {
-			router.push("/app");
+			router.push("/dashboard");
 		}
 	}, [isAuthenticated, isLoading, router]);
 

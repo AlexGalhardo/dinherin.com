@@ -287,7 +287,7 @@ export default function SignupClient() {
 					description: "Redirecting...",
 					variant: "default",
 				});
-				router.push("/app");
+				router.push("/dashboard");
 			} catch (err: any) {
 				const errorMessage =
 					err instanceof Error ? err.message : "There was an error creating your account. Please try again.";
@@ -330,7 +330,7 @@ export default function SignupClient() {
 				const data = await res.json();
 				signIn("google", { callbackUrl: data.stripe_checkout_url });
 			} else {
-				signIn("google", { callbackUrl: `${process.env.NEXT_PUBLIC_APP_URL}/app` });
+				signIn("google", { callbackUrl: `${process.env.NEXT_PUBLIC_APP_URL}/dashboard` });
 			}
 		} catch (error) {
 			const errorMessage = error instanceof Error ? error.message : "Error creating account with Google";

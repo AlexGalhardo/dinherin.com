@@ -76,7 +76,7 @@ export default function LandingPageClient(): React.ReactElement {
 
 	useEffect(() => {
 		if (status === "authenticated") {
-			router.push("/app");
+			router.push("/dashboard");
 		}
 	}, [status, router]);
 
@@ -94,7 +94,7 @@ export default function LandingPageClient(): React.ReactElement {
 					<div className="flex gap-4">
 						{session ? (
 							<div className="flex items-center gap-2">
-								<Link href="/app">
+								<Link href="/dashboard">
 									<Button variant="outline" className="gap-2 border-gray-700 hover:bg-gray-800">
 										Dashboard
 									</Button>

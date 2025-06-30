@@ -27,7 +27,7 @@ export function ProfileHeader({ userName }: ProfileHeaderProps) {
 	return (
 		<header className="sticky top-0 z-10 bg-white dark:bg-black shadow-sm">
 			<div className="container mx-auto px-4 py-4 flex justify-between items-center">
-				<Link href="/app">
+				<Link href="/dashboard">
 					{isMobile ? (
 						<DollarSign className="h-6 w-6 text-green-600" />
 					) : (
@@ -52,7 +52,7 @@ export function ProfileHeader({ userName }: ProfileHeaderProps) {
 							</Button>
 						</DropdownMenuTrigger>
 						<DropdownMenuContent align="end">
-							<DropdownMenuItem onClick={() => router.push("/app")}>
+							<DropdownMenuItem onClick={() => router.push("/dashboard")}>
 								<LayoutDashboard className="mr-2 h-4 w-4" />
 								Dashboard
 							</DropdownMenuItem>

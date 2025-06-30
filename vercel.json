@@ -10,11 +10,5 @@
       ]
     }
   ],
-  "$schema": "https://openapi.vercel.sh/vercel.json",
-  "crons": [
-    {
-      "path": "/api/cronjob/verify-users-subscriptions-active",
-      "schedule": "0 3 * * *"
-    }
-  ]
+  "$schema": "https://openapi.vercel.sh/vercel.json"
 }

@@ -4,7 +4,7 @@ import type React from "react";
 import type { Session } from "next-auth";
 import { ErrorBoundary } from "@/components/error-boundary";
 import { AuthSessionProvider } from "@/providers/session-provider";
-import { AuthProvider } from "@/contexts/auth-context";
+import { AuthProvider } from "@/contexts/auth.context";
 import { ThemeProvider } from "@/components/theme-provider";
 import { ReactQueryProvider } from "@/providers/react-query-provider";
 import { Toaster } from "@/components/ui/toaster";

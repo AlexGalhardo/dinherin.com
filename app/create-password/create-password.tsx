@@ -62,7 +62,7 @@ export default function CreatePasswordClient(): React.ReactElement {
 
 	useEffect(() => {
 		if (session) {
-			router.push("/app");
+			router.push("/dashboard");
 		}
 	}, [session, router]);
 

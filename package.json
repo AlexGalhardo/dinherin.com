@@ -8,7 +8,6 @@
     "linter": "biome check app/ --fix --unsafe",
     "format": "biome format middleware.ts app/ lib/ hooks/ contexts/ components/ prisma/ emails/ types/ --fix",
     "migrate": "prisma migrate dev",
-    "generate-blog-sitemap": "bun scripts/generate-sitemap.ts",
     "prisma:studio": "bunx prisma studio",
     "husky": "bunx husky"
   },

@@ -63,7 +63,7 @@ export async function GET(request: NextRequest) {
 					trial_period_days: 7,
 				},
 				locale: "en",
-				success_url: `${process.env.NEXT_PUBLIC_APP_URL}/app`,
+				success_url: `${process.env.NEXT_PUBLIC_APP_URL}/dashboard`,
 				cancel_url: `${process.env.NEXT_PUBLIC_APP_URL}`,
 			});
 
@@ -125,7 +125,7 @@ export async function GET(request: NextRequest) {
 					},
 				],
 				locale: "en",
-				success_url: `${process.env.NEXT_PUBLIC_APP_URL}/app`,
+				success_url: `${process.env.NEXT_PUBLIC_APP_URL}/dashboard`,
 				cancel_url: `${process.env.NEXT_PUBLIC_APP_URL}`,
 			});
 

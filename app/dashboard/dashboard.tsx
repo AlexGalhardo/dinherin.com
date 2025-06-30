@@ -7,11 +7,11 @@ import { DateRangeType, ExpenseFormDataType, ExpenseType } from "@/types/expense
 import { useAuth } from "@/hooks/use-auth";
 import { useRouter } from "next/navigation";
 import { useEffect, useMemo, useState, useCallback } from "react";
-import AppHeader from "./app-header";
-import AppFilters from "./app-filters";
-import AppStatistics from "./app-statistics";
-import AppList from "./app-list";
-import AppModals from "./app-modal";
+import AppHeader from "./dashboard-header";
+import AppFilters from "./dashboard-filters";
+import AppStatistics from "./dashboard-statistics";
+import AppList from "./dashboard-list";
+import AppModals from "./dashboard-modal";
 import LoadingScreen from "@/components/loading-screen";
 import { useSession } from "next-auth/react";
 
@@ -20,7 +20,7 @@ interface ProcessedExpense extends ExpenseType {
 	categoryName?: string;
 }
 
-export default function AppDashboard() {
+export default function Dashboard() {
 	const { data: session, status, update } = useSession();
 	const router = useRouter();
 	const [hasUpdated, setHasUpdated] = useState(false);

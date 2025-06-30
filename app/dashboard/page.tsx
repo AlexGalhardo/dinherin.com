@@ -1,4 +1,4 @@
-import AppDashboard from "./app-dashboard";
+import Dashboard from "./dashboard";
 
 export const metadata = {
 	title: "App Dashboard",
@@ -6,7 +6,7 @@ export const metadata = {
 	openGraph: {
 		title: "App Dashboard",
 		description: "Dinherin App Dashboard",
-		url: "https://dinherin.com/app",
+		url: "https://dinherin.com/dashboard",
 		siteName: "Dinherin.com",
 		images: [
 			{
@@ -27,10 +27,10 @@ export const metadata = {
 	},
 	metadataBase: new URL("https://dinherin.com"),
 	alternates: {
-		canonical: "/app",
+		canonical: "/dashboard",
 	},
 };
 
 export default function DashboardPage() {
-	return <AppDashboard />;
+	return <Dashboard />;
 }

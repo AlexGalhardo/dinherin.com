@@ -48,7 +48,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
 
 				if (result?.ok) {
 					setTimeout(() => {
-						router.push("/app");
+						router.push("/dashboard");
 					}, 100);
 
 					return { success: true };
@@ -67,7 +67,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
 	const loginWithGoogle = useCallback(async () => {
 		try {
 			await signIn("google", {
-				callbackUrl: "/app",
+				callbackUrl: "/dashboard",
 			});
 		} catch (error) {
 			const errorMessage = error instanceof Error ? error.message : "Google sign in failed";

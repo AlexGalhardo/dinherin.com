@@ -157,7 +157,7 @@ export default function LoginClient() {
 				if (!result.success) {
 					updateFormState({ error: result.error || "Login error" });
 				} else {
-					router.push("/app");
+					router.push("/dashboard");
 				}
 			} catch (error) {
 				const errorMessage = error instanceof Error ? error.message : "Internal server error";

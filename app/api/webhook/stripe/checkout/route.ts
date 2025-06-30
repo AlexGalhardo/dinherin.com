@@ -81,7 +81,7 @@ export async function POST(req: Request) {
 		if (payload.type === "invoice.paid") {
 			const sessionBillingPortal = await stripe.billingPortal.sessions.create({
 				customer: payload.data.object.customer,
-				return_url: `${process.env.NEXT_PUBLIC_APP_URL}/app`,
+				return_url: `${process.env.NEXT_PUBLIC_APP_URL}/dashboard`,
 				locale: "en",
 			});
 

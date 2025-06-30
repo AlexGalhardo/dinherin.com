@@ -65,7 +65,7 @@ export default function ResetPasswordClient(): React.ReactElement {
 
 	useEffect(() => {
 		if (!authLoading && isAuthenticated) {
-			router.push("/app");
+			router.push("/dashboard");
 			return;
 		}
 
